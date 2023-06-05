@@ -1,2 +1,2 @@
 #!/bin/bash
-pthon3 $PYFILE >> $PYFILEc
+pthon3 $PYFILE >> '$PYFILE' + 'c'
