@@ -27,23 +27,17 @@ int listint_len(listint_t *h)
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *ahead, *behind;
+	listint_t *node = *head, *next, *prev = NULL;
 
-	if (head == NULL || *head == NULL)
-		return (NULL);
-
-	behind = NULL;
-
-	while ((*head)->next != NULL)
+	while (node)
 	{
-		ahead = (*head)->next;
-		(*head)->next = behind;
-		behind = *head;
-		*head = ahead;
+		next = node->next;
+		node->next = prev;
+		prev = node;
+		node = next;
 	}
 
-	(*head)->next = behind;
-
+	*head = prev;
 	return (*head);
 }
 
