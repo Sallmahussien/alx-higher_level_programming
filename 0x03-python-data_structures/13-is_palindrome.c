@@ -56,12 +56,12 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *tmp, *rev, *tmp2 = *head;
 
-	if (!(*head) || !head)
+	if (!(*head || !head)
 		return (1);
 
 	tmp = *head;
 	rev = reverse_listint(&tmp2);
-	while(rev)
+	while (tmp)
 	{
 		if (tmp->n != rev->n)
 			return (0);
