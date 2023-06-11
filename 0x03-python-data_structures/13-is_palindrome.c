@@ -3,6 +3,24 @@
 listint_t *reverse_listint(listint_t **head);
 
 /**
+ * listint_len - the number of elements in a linked listint_t list.
+ * @h: pointer to head of the list
+ * Return: no. of list elements
+ */
+int listint_len(listint_t *h)
+{
+	int nodes = 0;
+	listint_t *tmp = h;
+
+	while (tmp)
+	{
+		nodes++;
+		tmp = tmp->next;
+	}
+	return (nodes);
+}
+
+/**
  * reverse_listint - reverses a listint_t linked list.
  * @head: pointer to the list head address
  * Return:  pointer to the first node of the reversed list
@@ -38,17 +56,18 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *tmp, *rev, *tmp2 = *head;
 
-	if (!*head || !(*head)->next || !head)
+	if (!(*head) || !head)
 		return (1);
 
 	tmp = *head;
 	rev = reverse_listint(&tmp2);
-	while (tmp)
+	while(rev)
 	{
 		if (tmp->n != rev->n)
 			return (0);
 		tmp = tmp->next;
 		rev = rev->next;
 	}
+
 	return (1);
 }
