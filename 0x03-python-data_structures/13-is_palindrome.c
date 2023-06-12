@@ -49,20 +49,23 @@ listint_t *reverse_listint(listint_t **head)
 int is_palindrome(listint_t **head)
 {
 	listint_t *tmp, *rev, *tmp2 = *head;
+	int size = listint_len(*head), i;
 
 	if (!(*head) || !head)
 		return (1);
 
-	tmp = *head;
+	for (i = 0; i < (size % 2 == 0 ? size / 2 : size / 2 + 1); i++)
+		tmp2 = tmp2->next;
 	rev = reverse_listint(&tmp2);
-	while (tmp)
+
+	tmp = *head;
+	for (i = 0; i < size / 2; i++)
 	{
 		if (tmp->n != rev->n)
 			return (0);
 		tmp = tmp->next;
 		rev = rev->next;
 	}
-	reverse_listint(&rev);
 
 	return (1);
 }
