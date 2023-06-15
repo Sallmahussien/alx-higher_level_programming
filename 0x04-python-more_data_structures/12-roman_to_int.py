@@ -15,7 +15,7 @@ def roman_to_int(roman_string):
     num, length = 0, len(roman_string)
 
     for idx in range(length):
-        if roman_dict.get(roman_string[idx], 0) == 0:
+        if roman_string[idx] not in roman_dict.keys():
             return (0)
 
         current_value = roman_dict[roman_string[idx]]
