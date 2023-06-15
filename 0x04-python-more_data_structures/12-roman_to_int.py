@@ -16,9 +16,8 @@ def roman_to_int(roman_string):
 
     while idx < length:
         current_value = roman_dict[roman_string[idx]]
-        next_value = roman_dict[roman_string[idx+1]]
 
-        if current_value < next_value and idx != length - 1:
+        if idx != length-1 and current_value < roman_dict[roman_string[idx+1]]:
             num += current_value * -1
         else:
             num += current_value
