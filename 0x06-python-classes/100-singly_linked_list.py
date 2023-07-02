@@ -1,4 +1,4 @@
-#!/usr/bin/pythpn3
+#!/usr/bin/python3
 '''Defines classes for singly linked list'''
 
 
