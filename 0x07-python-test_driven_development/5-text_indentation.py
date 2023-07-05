@@ -19,7 +19,7 @@ def text_indentation(text):
     new_text_list = text.split(' ')
     new_text_list = [element for element in new_text_list if element != '']
     new_text = ' '.join(new_text_list)
-    new_text = (new_text.strip()
+    new_text = (new_text
                 .replace('. ', '.').replace('.', '.\n\n')
                 .replace('? ', '?').replace('?', '?\n\n')
                 .replace(': ', ':').replace(':', ':\n\n')
