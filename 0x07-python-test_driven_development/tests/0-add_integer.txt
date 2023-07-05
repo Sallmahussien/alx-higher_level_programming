@@ -1,3 +1,4 @@
+```text
 #0-add_integer.txt
 
 ===========================
@@ -40,6 +41,11 @@ that value is equivalent to using the ``+`` operator.
 
 ::
 
+    >>> add_integer(3)
+    101
+
+::
+
     >>> add_integer('str', 2.0)
     Traceback (most recent call last):
     TypeError: a must be an integer
@@ -49,3 +55,28 @@ that value is equivalent to using the ``+`` operator.
     >>> add_integer(3, [1, 'p', 7])
     Traceback (most recent call last):
     TypeError: b must be an integer
+
+::
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+::
+
+    >>> add_integer(4.0, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+::
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+```
