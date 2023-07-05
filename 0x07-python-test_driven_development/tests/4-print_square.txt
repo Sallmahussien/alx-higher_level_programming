@@ -31,3 +31,8 @@ Usage
     >>> print_square(-500)
     Traceback (most recent call last):
     ValueError: size must be >= 0
+
+::
+
+    >>> print_square()
+    TypeError: print_square() missing 1 required positional argument: 'size'
