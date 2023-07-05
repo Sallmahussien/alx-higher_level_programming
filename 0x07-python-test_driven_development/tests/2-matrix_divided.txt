@@ -19,7 +19,8 @@ Usage
 ::
 
     >>> matrix_divided([], 3)
-    []
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 ::
 
@@ -31,7 +32,7 @@ Usage
 
     >>> matrix_divided(None, 3)
     Traceback (most recent call last):
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
+    TypeError: 'NoneType' object is not iterable
 
 ::
 

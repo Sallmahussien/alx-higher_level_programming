@@ -19,6 +19,7 @@ def matrix_divided(matrix, div):
         A new matrix
     '''
     is_2d_matrix = all(isinstance(row, list) for row in matrix)
+    is_2d_matrix = is_2d_matrix and len(matrix) != 0
     is_valid_type = all(isinstance(n, (int, float)) for r in matrix for n in r)
     if not (isinstance(matrix, list) and is_2d_matrix and is_valid_type):
         err_msg = 'matrix must be a matrix (list of lists) of integers/floats'
