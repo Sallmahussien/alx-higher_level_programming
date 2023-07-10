@@ -9,7 +9,3 @@ class Square(Rectangle):
         self.integer_validator('size', size)
         super().__init__(size, size)
         self.__size = size
-
-    def area(self):
-        '''Calculate the area of the BaseGeometry instance'''
-        return self.__size ** 2
