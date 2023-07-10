@@ -17,10 +17,6 @@ Usage
     >>> my_list = MyList()
 
 ::
-    >>> print(type(my_list))
-    <class '1-my_list.MyList'>
-
-::
 
     >>> print(my_list)
     []
@@ -42,9 +38,15 @@ Usage
 
 ::
 
+    >>> my_list[4] = 6
+    >>> print(my_list)
+    [1, 4, 2, 3, 6]
+
+::
+
     >>> my_list.remove(1)
     >>> my_list.print_sorted()
-    [2, 3, 4, 5]
+    [2, 3, 4, 6]
 
 ::
 
