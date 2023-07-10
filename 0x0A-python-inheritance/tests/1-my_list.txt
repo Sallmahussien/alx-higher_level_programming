@@ -15,6 +15,13 @@ Usage
 
     >>> MyList = __import__('1-my_list').MyList
     >>> my_list = MyList()
+
+::
+    >>> print(type(my_list))
+    <class '__main__.MyList'>
+
+::
+
     >>> print(my_list)
     []
 
@@ -22,11 +29,6 @@ Usage
 
     >>> my_list.print_sorted()
     []
-
-::
-    >>> my_list = MyList()
-    >>> print(my_list.print_sorted)
-    <bound method MyList.print_sorted of []>
 
 ::
 
