@@ -42,9 +42,16 @@ Usage
     >>> bg.integer_validator("my_int", 12)
 
 ::
+
     >>> bg.integer_validator("my_int", [1, 2, 3])
     Traceback (most recent call last):
     TypeError: my_int must be an integer
+
+::
+
+    >>> bg.integer_validator({'a': 1}, (1, 2, 3))
+    Traceback (most recent call last):
+    TypeError: {'a': 1} must be an integer
 
 ::
 
