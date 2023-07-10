@@ -18,7 +18,7 @@ Usage
 
 ::
     >>> print(type(my_list))
-    <class '__main__.MyList'>
+    <class '1-my_list.MyList'>
 
 ::
 
