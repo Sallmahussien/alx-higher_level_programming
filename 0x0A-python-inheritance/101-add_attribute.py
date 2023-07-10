@@ -13,7 +13,7 @@ def add_attribute(obj, attr_name, attr_value):
     Exceptions:
         TypeError: If the object can't have new attribute
     '''
-    if hasattr(obj, '__slots__') and attr_name not in obj.__slots__:
+    if not hasattr(obj, '__dict__'):
         raise TypeError("can't add new attribute")
 
-    obj.__dict__[attr_name] = attr_value
+    setattr(obj, attr_name, attr_value)
