@@ -14,5 +14,5 @@ def append_after(filename="", search_string="", new_string=""):
         if search_string in line:
             lines.insert(idx + 1, new_string)
 
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.writelines(lines)
+    with open(filename, 'w', encoding='utf-8') as file_write:
+        file_write.writelines(lines)
