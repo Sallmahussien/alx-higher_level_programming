@@ -31,6 +31,7 @@ if __name__ == "__main__":
             else:
                 if line_list[-2] in codes:
                     code_dict[line_list[-2]] = 1
+
     except KeyboardInterrupt:
         print_info(size, code_dict)
         raise
