@@ -16,5 +16,3 @@ def append_after(filename="", search_string="", new_string=""):
 
         file.seek(0)
         file.write("".join(lines))
-
-append_after("append_after_100.txt", "Python", "\"C is fun!\"\n")
