@@ -10,9 +10,11 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r+', encoding='utf-8') as file:
         lines = file.readlines()
 
+        new_list = []
         for idx, line in enumerate(lines):
+            new_list.append(line)
             if search_string in line:
-                lines.insert(idx + 1, new_string)
+                new_list.append(new_string)
 
         file.seek(0)
-        file.write("".join(lines))
+        file.write("".join(new_list))
