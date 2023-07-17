@@ -1,4 +1,4 @@
-from unittest import TestCase
+import unittest
 from unittest.mock import patch
 from models.base import Base
 from models.rectangle import Rectangle
@@ -6,7 +6,7 @@ from io import StringIO
 '''Define Unitests for Rectangle class'''
 
 
-class TestRectangle(TestCase):
+class TestRectangle(unittest.TestCase):
     '''Unittests for the new instance of the Rectangle Class'''
 
     def test_rectangle_is_base(self):
@@ -52,7 +52,7 @@ class TestRectangle(TestCase):
             r = Rectangle(1, 1, 1, 1, 1, 1)
 
 
-class TestRectangleWidth(TestCase):
+class TestRectangleWidth(unittest.TestCase):
     '''Unittest for the width attribute of the Rectangle class'''
     def test_width_setter_getter(self):
         r = Rectangle(1, 2)
@@ -112,7 +112,7 @@ class TestRectangleWidth(TestCase):
             Rectangle(0, 10, 0, 0, 9)
 
 
-class TestRectangleHeight(TestCase):
+class TestRectangleHeight(unittest.TestCase):
     '''Unittest for the height attribute of the Rectangle class'''
     def test_height_setter_getter(self):
         r = Rectangle(1, 2)
@@ -172,7 +172,7 @@ class TestRectangleHeight(TestCase):
             Rectangle(10, 0, 0, 0, 9)
 
 
-class TestRectangleX(TestCase):
+class TestRectangleX(unittest.TestCase):
     '''Unittest for the x attribute of the Rectangle class'''
     def test_x_setter_getter(self):
         r = Rectangle(1, 2)
@@ -232,7 +232,7 @@ class TestRectangleX(TestCase):
             Rectangle(10, 12, -10, 0, 9)
 
 
-class TestRectangleY(TestCase):
+class TestRectangleY(unittest.TestCase):
     '''Unittest for the y attribute of the Rectangle class'''
     def test_y_setter_getter(self):
         r = Rectangle(1, 2)
@@ -292,7 +292,7 @@ class TestRectangleY(TestCase):
             Rectangle(10, 12, 1, -10, 9)
 
 
-class TestRectangleArea(TestCase):
+class TestRectangleArea(unittest.TestCase):
     '''Unittests for area method of the Rectangle class'''
     def test_area_with_argument(self):
         with self.assertRaises(TypeError):
@@ -308,7 +308,7 @@ class TestRectangleArea(TestCase):
         self.assertEqual(r.area(), 9999999999999999800000000000000001)
 
 
-class TestRectangleDisplay(TestCase):
+class TestRectangleDisplay(unittest.TestCase):
     '''Unittests for display method of the Rectangle class'''
     def test_display_with_arguments(self):
         with self.assertRaises(TypeError):
@@ -344,7 +344,7 @@ class TestRectangleDisplay(TestCase):
             self.assertEqual(fake_out.getvalue(), expected_output)
 
 
-class TestRectangleToDictionary(TestCase):
+class TestRectangleToDictionary(unittest.TestCase):
     '''Unittest for to_dictionary method of the Rectangle class'''
     def test_to_dictionary_with_arguments(self):
         with self.assertRaises(TypeError):
@@ -399,7 +399,7 @@ class TestRectangleToDictionary(TestCase):
         self.assertEqual(r.to_dictionary(), expected_output)
 
 
-class TestRectangleToString(TestCase):
+class TestRectangleToString(unittest.TestCase):
     '''Unittests for __str__ method of the Rectangle class'''
     def test_to_string_with_width_height(self):
         r = Rectangle(4, 6)
@@ -422,7 +422,7 @@ class TestRectangleToString(TestCase):
         self.assertEqual(r.__str__(), expected_output)
 
 
-class TestRectangleUpdate(TestCase):
+class TestRectangleUpdate(unittest.TestCase):
     '''Unittests for to_update method of the Rectangle class '''
     def test_update_with_no_arguments(self):
         r = Rectangle(4, 5)
@@ -573,3 +573,6 @@ class TestRectangleUpdate(TestCase):
             'x': 2,
             'y': 3
         })
+
+if __name__ == '__main__':
+    unittest.main()
