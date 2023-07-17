@@ -36,7 +36,7 @@ class Base:
         Args:
             list_objs: is a list of instances who inherits of Base
         '''
-        if list_objs == None:
+        if list_objs is None:
             list_objs = []
 
         filename = cls.__name__ + ".json"
@@ -76,7 +76,7 @@ class Base:
 
         instsance_list = [cls.create(**dictionary) for dictionary in dict_list]
         return instsance_list
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         '''Writes the CSV string representation of list_objs to a file
@@ -84,7 +84,7 @@ class Base:
         Args:
             list_objs: is a list of instances who inherits of Base
         '''
-        if list_objs == None:
+        if list_objs is None:
             list_objs = []
 
         filename = cls.__name__ + ".csv"
