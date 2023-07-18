@@ -192,9 +192,14 @@ class TestBaseSaveToFile(unittest.TestCase):
         with open("Square.json", "r") as f:
             self.assertEqual("[]", f.read())
 
-    def test_save_to_file_empty_list(self):
+    def test_save_to_file_empty_list_rectangle(self):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as f:
+            self.assertEqual("[]", f.read())
+
+    def test_save_to_file_empty_list_square(self):
+        Square.save_to_file([])
+        with open("Square.json", "r") as f:
             self.assertEqual("[]", f.read())
 
     def test_save_to_file_rectangle(self):
