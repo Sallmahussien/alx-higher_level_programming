@@ -81,20 +81,23 @@ class Base:
         Args:
             list_objs: is a list of instances who inherits of Base
         '''
-        if list_objs is None:
-            list_objs = []
 
         filename = cls.__name__ + ".csv"
-        list_objs = [obj.to_dictionary() for obj in list_objs]
+
         with open(filename, 'w', encoding='utf-8') as csv_file:
-            if cls.__name__ == "Rectangle":
-                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            if list_objs is None or list_objs == []:
+                csv_file.write("[]")
             else:
-                fieldnames = ['id', 'size', 'x', 'y']
-            csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-            csv_writer.writeheader()
-            for obj in list_objs:
-                csv_writer.writerow(obj)
+                list_objs = [obj.to_dictionary() for obj in list_objs]
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fieldnames = ['id', 'size', 'x', 'y']
+                csv_writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+
+                csv_writer.writeheader()
+                for obj in list_objs:
+                    csv_writer.writerow(obj)
 
     @classmethod
     def load_from_file_csv(cls):
