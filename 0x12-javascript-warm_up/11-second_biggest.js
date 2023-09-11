@@ -5,5 +5,5 @@ const argv = process.argv.slice(2).sort().reverse();
 if (argv.length <= 3) {
   console.log(0);
 } else {
-  console.log(argv[1]);
+  console.log(Number(argv[1]));
 }
