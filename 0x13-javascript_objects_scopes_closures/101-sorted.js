@@ -9,5 +9,4 @@ for (const key in dict) {
   newDict[dict[key].toString()].push(key);
 }
 
-console.log(dict);
 console.log(newDict);
