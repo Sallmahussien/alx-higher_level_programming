@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const list = require('./tests/100-data').list;
+const list = require('./100-data').list;
 const newList = list.map((element, idx) => element * idx);
 
 console.log(list);
