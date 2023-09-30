@@ -8,7 +8,9 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    url = f"https://api.github.com/repos/{sys.argv[1]}/{sys.argv[2]}/commits"
+    owner = sys.argv[2]
+    repo_name = sys.argv[1]
+    url = f"https://api.github.com/repos/{owner}/{repo_name}/commits"
 
     response = requests.get(url).json()
 
