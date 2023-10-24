@@ -10,10 +10,18 @@ request(url, (error, response, body) => {
   else {
     const moviesCharacters = JSON.parse(body).characters;
 
-    moviesCharacters.forEach((character) => {
-      request(character, (error, response, body) => {
-        if (error) console.log(error);
-        else console.log(JSON.parse(body).name);
+    const promises = moviesCharacters.map((character) => {
+      return new Promise((resolve, reject) => {
+        request(character, (error, response, body) => {
+          if (error) reject(error);
+          else resolve(JSON.parse(body).name);
+        });
+      });
+    });
+
+    Promise.all(promises).then((names) => {
+      names.forEach((name) => {
+        console.log(name);
       });
     });
   }
