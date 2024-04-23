@@ -28,8 +28,12 @@
 * What are the built-in mutable types
 * What are the built-in immutable types
 * How does Python pass variables to functions
-## Tasks
 
+## Tests
+* [tests](./tests): Directory of test files.
+
+
+## Tasks
 
 * **0. Who am I?**
   * [0-answer.txt](./0-answer.txt): What function would you use to print the type of an object?
