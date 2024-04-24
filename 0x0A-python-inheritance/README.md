@@ -27,8 +27,7 @@
 
 ## Tests
 
-* [tests](./tests): Folder of test files. Includes both Holberton-provided ones
-as well as the following two independently-developed:
+* [tests](./tests): Folder of test files.
     * [1-my_list.txt](./1-my_list.txt)
     * [7-base_geometry.txt](./7-base_geometry.txt)
 
